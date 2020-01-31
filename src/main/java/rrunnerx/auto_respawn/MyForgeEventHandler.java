@@ -17,7 +17,10 @@ public class MyForgeEventHandler
         if(event.getGui() instanceof GuiGameOver && respawnIsActive)
         {
             EntityPlayer player = Minecraft.getMinecraft().player;
-            player.respawnPlayer();
+            if(!player.isRiding())
+            {
+                player.respawnPlayer();
+            }
         }
 
     }
